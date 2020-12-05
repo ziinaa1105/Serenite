@@ -1,52 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
     >
 
-    <androidx.appcompat.widget.Toolbar
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <TextView
-        android:id="@+id/date_to_find"
-        android:textSize="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:text="한달의 행복"
+        android:textSize="20dp"/>
 
+    //NumberPicker 생성
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@id/datePicker1"/>
+        android:orientation="horizontal">
+        //yaer 선택
+        <NumberPicker
+            android:id="@+id/picker_year"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"/>
+        //month 선택
+        <NumberPicker
+            android:id="@+id/picker_month"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
 
-    <DatePicker
-        android:id="@+id/datePicker1"
-        android:layout_width="wrap_content"
+    //확인, 취소 버튼 생성
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:datePickerMode="spinner"
-        android:calendarViewShown="false"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
-
-    <Button
-        android:id="@+id/go_to_date"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/datePicker1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
-        android:background="@drawable/button_custom1"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:text="이동" />
-
-
-
-
-
-
-</RelativeLayout>
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="확인"
+            android:textAllCaps="false"
+            android:paddingLeft="3dp"
+            android:background="@drawable/button_custom2"/>
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:background="@drawable/button_custom2"/>
+        </LinearLayout>
+    </LinearLayout>
