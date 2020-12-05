@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DailyDiary"/>
+        <activity android:name=".OneMonth"/>
+        <activity android:name=".FindDate"/>
     </application>
 
 </manifest>

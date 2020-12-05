@@ -22,7 +22,7 @@ public class DailyDiary extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setLogo(R.mipmap.ic_launcher_heartlogo);
+        getSupportActionBar().setLogo(R.mipmap.ic_heart);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
 

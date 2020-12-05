@@ -89,9 +89,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSelectedLis
     }
 
 
-
-    /*
-    // 설정 눌렀을 때 시간 설정 페이지로 이동
+    // 설정 눌렀을 때 날짜 설정 페이지로 이동
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_btn1:
@@ -102,8 +100,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSelectedLis
                 return super.onOptionsItemSelected(item);
         }
     }
-    */
-    /*
+
     // 한달의 행복 페이지로 이동
     public void monClick(View v){
         Intent intent;
@@ -114,8 +111,5 @@ public class MainActivity extends AppCompatActivity implements OnDateSelectedLis
                 break;
         }
     }
-    */
 
 }
-
-// 한달의 행복누르면 팅김~~~~~~~~~
