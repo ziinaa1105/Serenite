@@ -1,65 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_marginTop="20dp"
-    >
+    tools:context=".OneMonth">
 
     <TextView
+        android:id="@+id/tex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="15dp"
         android:layout_alignParentTop="true"
         android:text="한달의 행복"
-        android:textSize="20dp"/>
+        android:gravity="center"
+        android:textSize="30dp"/>
 
-    //NumberPicker 생성
     <LinearLayout
+        android:id="@+id/pickers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:orientation="horizontal">
+
         //yaer 선택
+
+        //month 선택
+
         <NumberPicker
             android:id="@+id/picker_year"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
-            android:layout_margin="10dp"/>
-        //month 선택
-        <NumberPicker
-            android:id="@+id/picker_month"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"/>
+            android:layout_below="@+id/txt"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="50dp"/>
+
+
+    <NumberPicker
+        android:id="@+id/picker_month"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="80dp"/>
     </LinearLayout>
 
-    //확인, 취소 버튼 생성
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-        <Button
-            android:id="@+id/btn_confirm"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="확인"
-            android:textAllCaps="false"
-            android:paddingLeft="3dp"
-            android:background="@drawable/button_custom2"/>
-        <Button
-            android:id="@+id/btn_cancel"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="취소"
-            android:textSize="20dp"
-            android:layout_weight="1"
-            android:textAllCaps="false"
-            android:background="@drawable/button_custom2"/>
-        </LinearLayout>
-    </LinearLayout>
+        android:background="@drawable/button_custom1"
+        android:paddingLeft="3dp"
+        android:text="확인"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:onClick="onClick"
+        android:layout_below="@+id/pickers"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="30dp"/>
+
+    <Button
+
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_custom2"
+        android:paddingLeft="3dp"
+        android:text="취소"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:onClick="onClick"
+        android:layout_toRightOf="@+id/btn_confirm"
+        android:layout_below="@+id/pickers"
+        android:layout_marginLeft="30dp"/>
+
+</RelativeLayout>

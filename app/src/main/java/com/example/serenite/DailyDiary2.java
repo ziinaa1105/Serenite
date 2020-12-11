@@ -30,7 +30,7 @@ public class DailyDiary2 extends AppCompatActivity {
         Intent intent1 = getIntent();
         tx1 = (TextView)findViewById(R.id.today_date);
         int year = intent1.getExtras().getInt("year");
-        int month = intent1.getExtras().getInt("mon")+1;
+        int month = intent1.getExtras().getInt("mon");
         int day = intent1.getExtras().getInt("day");
         String date = Integer.toString(year)+"년 " + Integer.toString(month)+"월 " + Integer.toString(day) + "일";
 

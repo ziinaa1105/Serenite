@@ -25,12 +25,11 @@ public class OneMonth_page extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.ic_heart_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        // OneMonth에서 선택한 년, 월 받아오기. 에러나니까 다른 방법 찾아보기
-        /*
+
        Intent intent = getIntent();
         tx1 = (TextView)findViewById(R.id.what_month);
-        int year = intent.getExtras().getInt("Year");
-        int month = intent.getExtras().getInt("Month")+1;
+        int year = intent.getExtras().getInt("ye");
+        int month = intent.getExtras().getInt("mo")+1;
         String date = Integer.toString(year)+"년 " + Integer.toString(month)+"월의 행복";
         tx1.setText(date);
 
@@ -46,7 +45,7 @@ public class OneMonth_page extends AppCompatActivity {
                         Color.parseColor("#c15df0"),
                 }, null, Shader.TileMode.MIRROR);
         tx1.getPaint().setShader(textShader1);
-        */
+
 
     }
 }

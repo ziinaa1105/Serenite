@@ -36,16 +36,15 @@
             >
 
             <Button
-                android:id="@+id/one_month"
+                android:id="@+id/go_to_select_month"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/button_custom2"
-
                 android:text="한 달의 행복"
                 android:textSize="15dp"
-                android:onClick="monClick"/>
+                android:onClick="onClick"/>
 
 
         </RelativeLayout>

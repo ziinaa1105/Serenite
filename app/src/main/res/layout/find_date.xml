@@ -51,7 +51,7 @@
         android:layout_below="@+id/button1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:background="@drawable/button_custom1"
+        android:background="@drawable/button_custom2"
         android:textColor="#ffffff"
         android:textStyle="bold"
         android:onClick="monClick"

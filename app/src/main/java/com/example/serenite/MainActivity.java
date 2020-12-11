@@ -67,15 +67,18 @@ public class MainActivity extends AppCompatActivity implements OnDateSelectedLis
 
 
         //calendarView.setOnDateChangedListener(this);
-        Button onemonthBtn = findViewById(R.id.one_month);
+        // 한달의 행복 대화상자 띄우기
+        Button onemonthBtn = findViewById(R.id.go_to_select_month);
         onemonthBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                OneMonth pd = new OneMonth();
-                pd.setListener(d);
-                pd.show(getSupportFragmentManager(), "YearMonthPicker");
+                Intent one_month_dialog = new Intent(MainActivity.this, OneMonth.class);
+                startActivity(one_month_dialog);
+
             }
         });
+
+
     }
     // 설정 버튼 만들기
     @Override
@@ -113,14 +116,6 @@ public class MainActivity extends AppCompatActivity implements OnDateSelectedLis
         }
     }
 
-    //atepicker에게서 데이터를 받은 후 실행 : OneMonth_page 액티비티 전환
-    DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth){
-            Intent intent=new Intent(MainActivity.this,OneMonth_page.class);
-            startActivity(intent);
-        }
-    };
 
 
 
