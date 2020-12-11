@@ -5,10 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OneMonth_page">
-
+<ScrollView
+    android:id="@+id/one_month_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
     <RelativeLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
@@ -27,7 +31,6 @@
             android:layout_gravity="center"
             android:layout_below="@id/toolbar"
             android:gravity="center"
-
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="20dp"
@@ -37,9 +40,76 @@
             android:textStyle="bold"
             android:textAlignment="center"/>
 
+        <TextView
+            android:id="@+id/txt1"
+            android:text="가장 행복했던 순간의 사진"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/what_month"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
 
+        <ImageView
+            android:id="@+id/happiest_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/heart_list3"
+            android:layout_below="@+id/txt1"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:id="@+id/pic_choice"
+            android:text="사진 선택 완료"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/happiest_pic"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:id="@+id/txt2"
+            android:text="가장 감사했던 순간"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pic_choice"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/happiest_word"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt2"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/txt3"
+            android:text="가장 행복했던 순간"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/happiest_word"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:id="@+id/thank_word"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt3"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            />
 
 
     </RelativeLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
