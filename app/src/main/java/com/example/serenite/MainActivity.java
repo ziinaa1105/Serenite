@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements OnDateSelectedLis
         // 툴바 지정
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setLogo(R.mipmap.ic_heart);
+        getSupportActionBar().setLogo(R.mipmap.ic_heart_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setTitle("  Serenite");
 

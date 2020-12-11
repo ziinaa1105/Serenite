@@ -29,7 +29,7 @@ public class FindDate extends AppCompatActivity {
         // 툴바 표시
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setLogo(R.mipmap.ic_heart);
+        getSupportActionBar().setLogo(R.mipmap.ic_heart_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         datepicker = (DatePicker)findViewById(R.id.datePicker1);

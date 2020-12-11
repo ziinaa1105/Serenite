@@ -22,7 +22,7 @@ public class OneMonth_page extends AppCompatActivity {
         // 툴바 표시
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setLogo(R.mipmap.ic_heart);
+        getSupportActionBar().setLogo(R.mipmap.ic_heart_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         // OneMonth에서 선택한 년, 월 받아오기. 에러나니까 다른 방법 찾아보기
