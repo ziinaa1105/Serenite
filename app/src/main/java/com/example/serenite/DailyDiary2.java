@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class DailyDiary extends AppCompatActivity {
+public class DailyDiary2 extends AppCompatActivity {
     TextView tx1;
 
     @Override
@@ -29,9 +29,9 @@ public class DailyDiary extends AppCompatActivity {
 
         Intent intent1 = getIntent();
         tx1 = (TextView)findViewById(R.id.today_date);
-        int year = intent1.getExtras().getInt("Year");
-        int month = intent1.getExtras().getInt("Month")+1;
-        int day = intent1.getExtras().getInt("Day");
+        int year = intent1.getExtras().getInt("year");
+        int month = intent1.getExtras().getInt("mon")+1;
+        int day = intent1.getExtras().getInt("day");
         String date = Integer.toString(year)+"년 " + Integer.toString(month)+"월 " + Integer.toString(day) + "일";
 
 

@@ -31,6 +31,8 @@ public class OneMonth extends DialogFragment {
     Button btnConfirm;
     Button btnCancel;
 
+    int ye, mo;
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -55,6 +57,8 @@ public class OneMonth extends DialogFragment {
             @Override
             public void onClick(View v) {
                 listener.onDateSet(null, yearPicker.getValue(), monthPicker.getValue(), 0);
+                ye = yearPicker.getValue();
+                mo = monthPicker.getValue();
                 OneMonth.this.getDialog().cancel();
             }
         });

@@ -16,11 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DailyDiary"/>
+
+        <activity android:name=".MainActivity"/>
         <activity android:name=".OneMonth"/>
         <activity android:name=".FindDate"/>
         <activity android:name=".OneMonth_page"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".DailyDiary"/>
+        <activity android:name=".DailyDiary2"/>
     </application>
 
 </manifest>
