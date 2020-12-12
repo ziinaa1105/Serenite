@@ -36,15 +36,11 @@ public class FindDate extends AppCompatActivity {
 
         datepicker = (DatePicker)findViewById(R.id.datePicker1);
         goal_date = (TextView) findViewById(R.id.what_date);
-        GetDate = (Button) findViewById(R.id.button1);
-        GoToDaily = (Button) findViewById(R.id.button2);
-
-
 
     }
     public void monClick(View v) {
         switch (v.getId()) {
-            case R.id.button1:
+            case R.id.btn_ok:
                 mYear = datepicker.getYear();
                 mMonth = datepicker.getMonth()+1;
                 mDay = datepicker.getDayOfMonth();
@@ -62,10 +58,8 @@ public class FindDate extends AppCompatActivity {
                         }, null, Shader.TileMode.CLAMP);
                 goal_date .getPaint().setShader(textShader);
                 break;
-
-            case R.id.button2:
+            case R.id.btn_go:
                 Intent go_to_diary = new Intent(this,DailyDiary2.class);
-
                 mYear2 = datepicker.getYear();
                 mMonth2 = datepicker.getMonth()+1;
                 mDay2 = datepicker.getDayOfMonth();

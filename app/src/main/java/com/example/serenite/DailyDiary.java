@@ -43,11 +43,7 @@ public class DailyDiary extends AppCompatActivity {
         int month = intent1.getExtras().getInt("Month")+1;
         int day = intent1.getExtras().getInt("Day");
         String date = Integer.toString(year)+"년 " + Integer.toString(month)+"월 " + Integer.toString(day) + "일";
-
-
-
         tx1.setText(date);
-
 
         //날짜 색바꾸기
         TextPaint paint1 = tx1.getPaint();
@@ -62,7 +58,6 @@ public class DailyDiary extends AppCompatActivity {
 
 
         today_pic = findViewById(R.id.happiest_pic);
-
         today_pic.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -72,8 +67,6 @@ public class DailyDiary extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE);
             }
         });
-
-
     }
 
     @Override

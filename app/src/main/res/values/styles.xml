@@ -7,7 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    // daily_diary에서 별표 색깔
+    // daily_diary에서 평점
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="colorControlNormal">#fa61d4</item>
         <item name="colorControlActivated">#cfebfc</item>
