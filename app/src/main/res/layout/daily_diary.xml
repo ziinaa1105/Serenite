@@ -6,40 +6,141 @@
     android:layout_height="match_parent"
     tools:context=".DailyDiary">
 
-    <RelativeLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-        <androidx.appcompat.widget.Toolbar
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/today_date"
-            android:layout_marginTop="10dp"
+    <ScrollView
+        android:id="@+id/one_month_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_below="@id/toolbar"
-            android:gravity="center"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
 
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="date"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
+            <androidx.appcompat.widget.Toolbar
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/diary_date"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@id/toolbar"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="date"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <ImageView
+                android:id="@+id/happiest_pic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/heart_list3"
+                android:layout_below="@+id/diary_date"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:onClick="onClick"/>
 
 
+            <TextView
+                android:id="@+id/txt2"
+                android:text="오늘의 가장 행복했던 순간"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/happiest_pic"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/happy"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt2"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:maxLength="500"
+                android:lines="3"
+                android:background="@drawable/textview_custom1"
+                android:hint="오늘 가장 행복했던순간을 \n최대 500자로 적어보세요."/>
+            <TextView
+                android:id="@+id/txt3"
+                android:text="오늘의 감사"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/happy"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/thank_word"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt3"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:maxLength="500"
+                android:lines="3"
+                android:maxLines="5"
+                android:background="@drawable/textview_custom1"
+                android:hint="오늘의 감사를 \n다섯가지 적어보세요."/>
+            <RatingBar
+                android:id="@+id/today_star"
+                style="@style/Widget.AppCompat.RatingBar"
+                android:theme="@style/RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="3"
+                android:layout_below="@id/thank_word"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/txt4"
+                android:text="내일 할 일 세 가지"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/today_star"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/what_to_do_tomorrow"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt4"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:maxLength="500"
+                android:lines="3"
+                android:maxLines="3"
+                android:background="@drawable/textview_custom1"
+                android:hint="내일 해야 할 세 가지는 무엇인가요?"/>
 
 
-    </RelativeLayout>
-
+        </RelativeLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

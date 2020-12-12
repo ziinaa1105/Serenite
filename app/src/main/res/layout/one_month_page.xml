@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OneMonth_page">
+
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 <ScrollView
     android:id="@+id/one_month_scroll_view"
     android:layout_width="match_parent"
@@ -25,7 +32,7 @@
 
         <TextView
             android:id="@+id/what_month"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -61,17 +68,9 @@
             android:src="@drawable/heart_list3"
             android:layout_below="@+id/txt1"
             android:gravity="center"
-            android:layout_centerHorizontal="true"/>
-        <Button
-            android:id="@+id/pic_choice"
-            android:text="사진 선택 완료"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_below="@id/happiest_pic"
-            android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
             android:onClick="onClick"/>
+
 
         <TextView
             android:id="@+id/txt2"
@@ -79,7 +78,7 @@
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/pic_choice"
+            android:layout_below="@id/happiest_pic"
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"/>
@@ -90,7 +89,11 @@
             android:layout_below="@+id/txt2"
             android:gravity="center"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginTop="15dp"
+            android:maxLength="500"
+            android:lines="3"
+            android:background="@drawable/textview_custom1"
+            android:hint="가장 감사했던 순간을 \n최대 500자로 적어보세요."/>
         <TextView
             android:id="@+id/txt3"
             android:text="가장 행복했던 순간"
@@ -108,8 +111,14 @@
             android:layout_below="@+id/txt3"
             android:gravity="center"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:maxLength="500"
+            android:lines="3"
+            android:background="@drawable/textview_custom1"
+            android:hint="가장 행복했던 순간을 \n최대 500자로 적어보세요."
             />
 
 
     </RelativeLayout>
 </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

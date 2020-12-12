@@ -1,19 +1,29 @@
 package com.example.serenite;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.os.Bundle;
 import android.text.TextPaint;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.io.InputStream;
+
 public class DailyDiary extends AppCompatActivity {
     TextView tx1;
+
+    private static final int REQUEST_CODE = 0;
+    private ImageView today_pic;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
@@ -28,7 +38,7 @@ public class DailyDiary extends AppCompatActivity {
 
 
         Intent intent1 = getIntent();
-        tx1 = (TextView)findViewById(R.id.today_date);
+        tx1 = (TextView)findViewById(R.id.diary_date);
         int year = intent1.getExtras().getInt("Year");
         int month = intent1.getExtras().getInt("Month")+1;
         int day = intent1.getExtras().getInt("Day");
@@ -54,9 +64,45 @@ public class DailyDiary extends AppCompatActivity {
 
 
 
+        today_pic = findViewById(R.id.happiest_pic);
+
+        today_pic.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
 
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if(requestCode == REQUEST_CODE)
+        {
+            if(resultCode == RESULT_OK)
+            {
+                try{
+                    InputStream in = getContentResolver().openInputStream(data.getData());
+
+                    Bitmap img = BitmapFactory.decodeStream(in);
+                    in.close();
+
+                    today_pic.setImageBitmap(img);
+                }catch(Exception e)
+                {
+
+                }
+            }
+            else if(resultCode == RESULT_CANCELED)
+            {
+                Toast.makeText(this, "다음에 다시 선택해주세요!", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 
 }
