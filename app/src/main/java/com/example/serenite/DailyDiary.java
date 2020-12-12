@@ -54,11 +54,8 @@ public class DailyDiary extends AppCompatActivity {
         float width1 = paint1.measureText(date);
         Shader textShader1 = new LinearGradient(0, 0, width1, tx1.getTextSize(),
                 new int[]{
-                        Color.parseColor("#fa5050"),
-                        Color.parseColor("#faa850"),
-                        Color.parseColor("#66ed5f"),
-                        Color.parseColor("#60b4f0"),
-                        Color.parseColor("#c15df0"),
+                        Color.parseColor("#b06ab3"),
+                        Color.parseColor("#4568DC"),
                 }, null, Shader.TileMode.MIRROR);
         tx1.getPaint().setShader(textShader1);
 

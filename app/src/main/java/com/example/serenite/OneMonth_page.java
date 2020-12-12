@@ -34,11 +34,11 @@ public class OneMonth_page extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.ic_heart_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-
+        // 그 해당 월의 페이지로 이동
        Intent intent = getIntent();
         tx1 = (TextView)findViewById(R.id.what_month);
-        int year = intent.getExtras().getInt("ye");
-        int month = intent.getExtras().getInt("mo");
+        int year = intent.getExtras().getInt("Year");
+        int month = intent.getExtras().getInt("Mon");
         String date = Integer.toString(year)+"년 " + Integer.toString(month)+"월의 행복";
         tx1.setText(date);
 

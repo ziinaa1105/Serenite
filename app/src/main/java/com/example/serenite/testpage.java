@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class testpage extends AppCompatActivity {
+    /*
+작동 안될때 인텐트 연결 확인용 페이지
+ */
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
@@ -21,3 +24,4 @@ public class testpage extends AppCompatActivity {
 
     }
 }
+

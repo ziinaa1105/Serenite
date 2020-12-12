@@ -59,52 +59,50 @@ public class MainActivity extends AppCompatActivity implements OnDateSelectedLis
                 // 주의 시작을 일요일
                 .setFirstDayOfWeek(SUNDAY)
                 // 캘린더의 범위 설정
-                .setMinimumDate(CalendarDay.from(2020, 01, 01))
-                .setMaximumDate(CalendarDay.from(2021, 03, 01))
-                //Months로 볼 건지, Weeks로 볼 건지 결정
+                .setMinimumDate(CalendarDay.from(2010, 01, 01))
+                .setMaximumDate(CalendarDay.from(2030, 12, 01))
+                //Months로 보기
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
                 .commit();
 
 
-        //calendarView.setOnDateChangedListener(this);
-        // 한달의 행복 대화상자 띄우기
+        // 달력 하단 버튼 클릭 -> 월 검색 페이지
         Button onemonthBtn = findViewById(R.id.go_to_select_month);
         onemonthBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent one_month_dialog = new Intent(MainActivity.this, OneMonth.class);
                 startActivity(one_month_dialog);
-
             }
         });
 
 
     }
-    // 설정 버튼 만들기
+
+
+    // 날짜 클릭하면 일자 페이지로 이동
+    @Override
+    public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+        // 인텐트로 전달
+        Intent go_to_diary = new Intent(this, DailyDiary.class);
+        int year = date.getYear();
+        int month = date.getMonth();
+        int day = date.getDay();
+        go_to_diary.putExtra("Year", year);
+        go_to_diary.putExtra("Month", month);
+        go_to_diary.putExtra("Day", day);
+        // 이동
+        startActivity(go_to_diary);
+    }
+
+    // 돋보기 버튼 만들기
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_bar, menu);
         return true;
     }
 
-    @Override
-    public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
-
-        // 일자 페이지로 이동
-        Intent intent = new Intent(this, DailyDiary.class);
-        // 날짜 넘기기
-        int year = date.getYear();
-        int month = date.getMonth();
-        int day = date.getDay();
-        intent.putExtra("Year", year);
-        intent.putExtra("Month", month);
-        intent.putExtra("Day", day);
-        // 이동
-        startActivity(intent);
-    }
-
-
-    // 설정 눌렀을 때 날짜 설정 페이지로 이동
+    // 돋보기 버튼 누르면 find date 페이지로 가게
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_btn1:
@@ -115,8 +113,5 @@ public class MainActivity extends AppCompatActivity implements OnDateSelectedLis
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
-
-
+    // 전체 끝 괄호
 }

@@ -40,7 +40,7 @@ public class DailyDiary2 extends AppCompatActivity {
         Intent intent1 = getIntent();
         tx1 = (TextView)findViewById(R.id.diary_date);
         int year = intent1.getExtras().getInt("Year");
-        int month = intent1.getExtras().getInt("Month")+1;
+        int month = intent1.getExtras().getInt("Mon");
         int day = intent1.getExtras().getInt("Day");
         String date = Integer.toString(year)+"년 " + Integer.toString(month)+"월 " + Integer.toString(day) + "일";
 
@@ -49,16 +49,12 @@ public class DailyDiary2 extends AppCompatActivity {
         tx1.setText(date);
 
 
-        //날짜 색바꾸기
         TextPaint paint1 = tx1.getPaint();
         float width1 = paint1.measureText(date);
         Shader textShader1 = new LinearGradient(0, 0, width1, tx1.getTextSize(),
                 new int[]{
-                        Color.parseColor("#fa5050"),
-                        Color.parseColor("#faa850"),
-                        Color.parseColor("#66ed5f"),
-                        Color.parseColor("#60b4f0"),
-                        Color.parseColor("#c15df0"),
+                        Color.parseColor("#b06ab3"),
+                        Color.parseColor("#4568DC"),
                 }, null, Shader.TileMode.MIRROR);
         tx1.getPaint().setShader(textShader1);
 

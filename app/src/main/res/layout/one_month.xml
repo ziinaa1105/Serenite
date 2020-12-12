@@ -9,71 +9,61 @@
 
     <TextView
         android:id="@+id/tex"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_marginTop="80dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="30dp"
         android:layout_alignParentTop="true"
         android:text="한달의 행복"
         android:gravity="center"
-        android:textSize="30dp"/>
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:background="@drawable/button_custom7"/>
 
-    <LinearLayout
-        android:id="@+id/pickers"
+
+    <DatePicker
+        android:id="@+id/datePicker2"
+        android:layout_below="@id/tex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
 
-        //yaer 선택
-
-        //month 선택
-
-        <NumberPicker
-            android:id="@+id/picker_year"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_below="@+id/txt"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginBottom="50dp"/>
-
-
-    <NumberPicker
-        android:id="@+id/picker_month"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="80dp"/>
-    </LinearLayout>
 
 
     <Button
         android:id="@+id/btn_confirm"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_custom1"
+        android:background="@drawable/button_custom9"
         android:paddingLeft="3dp"
         android:text="확인"
         android:textAllCaps="false"
         android:textSize="20dp"
         android:onClick="onClick"
-        android:layout_below="@+id/pickers"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="30dp"/>
+        android:layout_below="@+id/datePicker2"
+        android:layout_toLeftOf="@+id/blank2"/>
 
+    <TextView
+        android:id="@+id/blank2"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/datePicker2"
+        android:layout_centerHorizontal="true"/>
     <Button
 
         android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_custom2"
+        android:background="@drawable/button_custom8"
         android:paddingLeft="3dp"
         android:text="취소"
         android:textAllCaps="false"
         android:textSize="20dp"
         android:onClick="onClick"
-        android:layout_toRightOf="@+id/btn_confirm"
-        android:layout_below="@+id/pickers"
-        android:layout_marginLeft="30dp"/>
+        android:layout_toRightOf="@+id/blank2"
+        android:layout_below="@+id/datePicker2"/>
 
 </RelativeLayout>
